@@ -47,7 +47,7 @@ const Requests = () => {
           {requests
             .filter((request) => request !== null)
             .map((request) => {
-              const { _id, firstName, lastName, photoUrl, age, gender, about } = request.fromUserId;
+              const { _id, firstName, lastName, photoUrl, age, gender, about, location } = request.fromUserId;
               return (
                 <div
                   key={_id}
@@ -63,6 +63,7 @@ const Requests = () => {
                     <p className="text-sm text-gray-500 mb-2 text-center">{`${age} years old, ${gender}`}</p>
                   )}
                   <p className="text-sm text-gray-700 text-center mb-4">{about}</p>
+                  <p className="text-sm text-gray-700 text-center mb-4">{location}</p>
                   <div className="flex gap-4">
                     <button
                       className="btn btn-primary" onClick={() => reviewRequest("rejected", request._id)}
