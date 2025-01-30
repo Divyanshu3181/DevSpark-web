@@ -1,6 +1,6 @@
-# DevHunge
+# DevSpark
 
-DevHunge is a social media platform designed for developers to connect, collaborate, and grow their network. It includes features like a feed, connection requests, and user profile management.
+DevSpark is a social media platform designed for developers to connect, collaborate, and grow their network. It includes features like a feed, connection requests, and user profile management.
 
 ## Features
 
@@ -38,8 +38,8 @@ DevHunge is a social media platform designed for developers to connect, collabor
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/DevHunge.git
-   cd DevHunge
+   git clone https://github.com/yourusername/DevSpark.git
+   cd DevSpark
    ```
 
 2. Install dependencies:
