@@ -46,10 +46,8 @@ const Premium = () => {
             theme: {
                 color: '#F37254'
             },
-            handler: function(response) {
-                // Call verifyPremiumUser after payment is complete
-                verifyPremiumUser();
-            }
+            handler: verifyPremiumUser
+            
         };
 
         const rzp = new window.Razorpay(options);
@@ -57,7 +55,10 @@ const Premium = () => {
     };
 
     return isUserPremium ? (
-        <h1 className="flex text-3xl">"You're already a premium user!!"</h1>
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+            <h1 className="text-3xl font-bold mb-4">🌟 You're already a premium user! 🌟</h1>
+            <p className="text-xl">Enjoy your premium features!</p>
+        </div>
         
     ) : (
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center min-h-screen bg-gray-900 p-4">
