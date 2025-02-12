@@ -11,6 +11,7 @@ const Premium = () => {
         const res = await axios.get(BASE_URL + "/premium/verify", {
             withCredentials: true,
         });
+        console.log("Premium verification response:", res.data);
 
         if (res.data.isPremium) {
             setIsUserPremium(true)
@@ -25,12 +26,13 @@ const Premium = () => {
             membershipType: type,
         }, { withCredentials: true });
 
+
         // It should open the razorpay dialog box
 
         const { amount, keyId, currency, notes, orderId, } = order.data
 
         const options = {
-            key: order.keyId,
+            key: keyId,
             amount,
             currency,
             name: "DevSpark",
@@ -44,7 +46,10 @@ const Premium = () => {
             theme: {
                 color: '#F37254'
             },
-            handler: verifyPremiumUser
+            handler: function(response) {
+                // Call verifyPremiumUser after payment is complete
+                verifyPremiumUser();
+            }
         };
 
         const rzp = new window.Razorpay(options);
