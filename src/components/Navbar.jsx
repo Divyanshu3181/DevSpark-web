@@ -78,6 +78,20 @@ const Navbar = () => {
                                 Requests
                             </Link>
 
+                            <Link to="/premium" className="btn btn-outline btn-sm mx-2 items-center gap-2">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                    className="w-4 h-4 text-purple-500"
+                                >
+                                    <path d="M12 3l3.09 6.26L22 10l-5 5.12 1.18 6.88L12 18.8l-6.18 3.2L7 15.12 2 10l6.91-0.74L12 3z" />
+
+
+                                </svg>
+                                Premium
+                            </Link>
+
                             <Link to="/profile" className="btn btn-outline btn-sm mx-2 items-center gap-2">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -106,21 +120,21 @@ const Navbar = () => {
                                     <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
                                 </svg>
                             </button>
-                        </div>                        
-                            <div className="dropdown dropdown-end">
-                                <label tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full">
-                                        <img alt="user photo" src={user.photoUrl} />
-                                    </div>
-                                </label>
-                                <ul
-                                    tabIndex={0}
-                                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-                                >
-                                    <li><a onClick={handleLogout}>Logout</a></li>
-                                </ul>
-                            </div>
-                        
+                        </div>
+                        <div className="dropdown dropdown-end">
+                            <label tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img alt="user photo" src={user.photoUrl} />
+                                </div>
+                            </label>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                            >
+                                <li><a onClick={handleLogout}>Logout</a></li>
+                            </ul>
+                        </div>
+
                     </div>
                     {menuOpen && (
                         <div className="md:hidden absolute w-full bg-base-100 shadow-md z-40 top-16">
@@ -128,8 +142,9 @@ const Navbar = () => {
                                 <li><Link to="/" className="btn btn-outline btn-sm w-full">Feed</Link></li>
                                 <li><Link to="/connections" className="btn btn-outline btn-sm w-full">Connections</Link></li>
                                 <li><Link to="/requests" className="btn btn-outline btn-sm w-full">Requests</Link></li>
+                                <li><Link to="/premium" className="btn btn-outline btn-sm w-full">Premium</Link></li>
                                 <li><Link to="/profile" className="btn btn-outline btn-sm w-full">Profile</Link></li>
-                                
+
                             </ul>
                         </div>
                     )}
